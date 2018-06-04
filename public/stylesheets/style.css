@@ -1,0 +1,110 @@
+/* STYLING CSS */
+
+/* FONTS */
+
+@font-face {
+  font-family: "CodeBold";
+  src: url("../fonts/CODE\ Bold.otf");
+}
+
+@font-face {
+  font-family: "CodeLight";
+  src: url("../fonts/CODE\ Light.otf");
+}
+
+/*  */
+
+body {
+  font-family: CodeBold;
+  color: #ffffff;
+}
+
+/* HEADER */
+
+#centerHeader {
+  background-color: #323232;
+  background-image: url('../images/newsBG.jpeg');
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+#centerHeader h1 {
+  font-size: 8rem;
+}
+
+#centerHeader p {
+  font-size: 1.5rem;
+}
+
+/* ARROW */
+
+.downArrow {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #00567D;
+  background: #04A9F5;
+  box-shadow: 0 0 0 5px #fff, 0 5px 25px rgba(0, 0, 0, .8);
+  overflow: hidden;
+}
+
+.downArrow:hover {
+  cursor: pointer;
+}
+
+.downArrow:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: rbga(0, 0, 0, .1);
+}
+
+.downArrow .fas {
+  font-size: 60px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: downAnimate 2s linear infinite;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+
+@keyframes downAnimate {
+  0% {
+    top: -10%
+  }
+  40% {
+    top: 60%;
+  }
+  60% {
+    top: 30%;
+  }
+  80% {
+    top: 60%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+/*  */
+
+/*  */
+
+/* SECTION */
+
+/*  */
