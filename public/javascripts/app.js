@@ -1,10 +1,9 @@
 $(document).ready(function() {
   // DOWN ARROW TO SCRAPE
   $(".downArrow").on("click", function(e) {
-    e.preventDefault();
     $("html, body").animate(
       {
-        scrollTop: $("#elementtoScrollToID").offset().top
+        scrollTop: $("#newsArticles").offset().top
       },
       2000
     );
@@ -29,6 +28,7 @@ $(document).ready(function() {
     });
   });
   //
+
   // SAVE ARTICLE BUTTON
   $(".save-article").on("click", function() {
     let heading = $(this)
@@ -68,14 +68,15 @@ $(document).ready(function() {
     window.location.reload();
   });
   //
+
   // ADD COMMENT BUTTON
   $(".comment-btn").on("click", function() {
     let heading = $(this)
-      .parent()
-      .siblings("div")
-      .children()
-      .children()
-      .text();
+    .parent()
+    .siblings("div")
+    .children()
+    .children()
+    .text();
     $("#article-heading").text(heading);
     $.ajax({
       url: "/saved/display-comments",
@@ -84,7 +85,7 @@ $(document).ready(function() {
         heading3: heading
       },
       dataType: "json"
-    }).then(res => {
+    }).then(res => {      console.log('THIS IS RES',res);
       $(".comment-display").empty();
       if (res) {
         res.forEach(item => {
@@ -104,6 +105,8 @@ $(document).ready(function() {
     });
   });
   //
+
+
   // DISPLAY COMMENT
   $(".comment-display").on("click", ".delete-comment", function(e) {
     e.preventDefault();
@@ -175,5 +178,6 @@ $(document).ready(function() {
     });
   });
   //
+
   // CLOSING TAG FOR DOC READY
 });

@@ -49,6 +49,7 @@ router.post("/display-comments", (req, res) => {
   Saved.findOne({
     heading: req.body.heading3
   }).then(data => {
+    console.log("DATA", data);
     res.json(data.comment);
   });
 });

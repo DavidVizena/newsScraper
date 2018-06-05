@@ -27,20 +27,21 @@ router.get("/scrape", (req, res) => {
   });
 
   rp("https://www.nytimes.com", function(error, response, html) {
-    if (!error && response.statusCode == 200) {
+  if (!error && response.statusCode == 200) {
       var $ = cheerio.load(html);
-
       // SCRAPES PAGE AND PULLS HEADING URL AND BODY
       $(".summary").each(function(i, element) {
         var url = $(this)
           .parent(".story")
           .children(".story-heading")
+          .children('a')
           .attr("href");
-        var summary = $(this).text();
-        var headline = $(this)
-          .parent(".story-heading")
+          var summary = $(this).text();
+          var headline = $(this)
+          .parent('.story')
+          .children(".story-heading")
           .text();
-
+          
         if (url && headline) {
           var newArticle = {
             heading: headline,
@@ -49,7 +50,6 @@ router.get("/scrape", (req, res) => {
           };
           new Article(newArticle).save(function(err) {
             if (err) {
-              console.log(err);
             }
           });
         }

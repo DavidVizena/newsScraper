@@ -49,7 +49,7 @@ body {
 
 .downArrow {
   position: absolute;
-  top: 65%;
+  top: 73%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 60px;
@@ -106,5 +106,11 @@ body {
 /*  */
 
 /* SECTION */
+#saveMessage{
+  color: #000;
+}
+.modal-body{
+  color: #000;
+}
 
 /*  */
