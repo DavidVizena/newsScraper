@@ -5,7 +5,8 @@ var mongoose = require("mongoose");
 require("../models/Saved");
 
 var Saved = mongoose.model("saved");
-/* GET users listing. */
+
+/* GET HOME PAGE. */
 router.get("/", function(req, res) {
   Saved.find().then(saved => {
     res.render("saved", { saved: saved });
